@@ -33,10 +33,11 @@ Check logs with:
 
 `sudo journalctl -u battery-monitor.service -f`
 
-Remove symlink and script:
+Remove symlink and script in /usr/local/bin:
 
 ```
 sudo systemctl disable --now battery-monitor.service
+sudo rm /etc/systemd/system/batter-monitor.service
 sudo rm /usr/local/bin/battery-monitor.sh
 ```
 
