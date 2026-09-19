@@ -1,5 +1,5 @@
 # battery-monitor
-A simple battery monitor script to customize the charging threshold for laptops that use **conservation mode** (most Lenovo non-Thinkpad laptops afaik). Conservation mode can either be disabled or enabled (set to 0 or 1). When enabled, charging will stop at 60% and start again once the battery percentage drops to 55%. This script allows laptops that use this feature to extend or limit the charging threshold to any custom percentage value. The threshold in this script is set to 80%, but can be adjusted in the initialization of the constant UPPER (line 7):
+A simple battery monitor script to customize the charging threshold for laptops that use **conservation mode** (most Lenovo non-Thinkpad laptops afaik). Conservation mode can either be disabled or enabled (set to 0 or 1). When enabled, charging will stop at 60% and start again once the battery percentage drops to 55%. This script allows laptops that use this feature to extend or limit the charging threshold to any custom percentage value. The threshold in this script is set to 80%, but can be adjusted in the initialization of the constant UPPER (line 7): 
 
 `UPPER=80          # stop charging at or above this %`
 
