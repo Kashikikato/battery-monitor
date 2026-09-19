@@ -7,7 +7,7 @@ The paths in the script are valid for my computer, which does not guarantee that
 ls /sys/class/power_supply -> find your battery
 cat /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode returns the conservation mode value for me (0 or 1). Please find out the correct path for your laptop. 
 
-**USAGE**
+### USAGE
 
 The script is meant to be used in a systemd service. Create this service for your script by following these steps:
 
