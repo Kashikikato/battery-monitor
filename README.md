@@ -25,7 +25,7 @@ The script is meant to be used in a systemd service.
 
 To not run into permission issues, go into the directory where you saved the script and move the script to /usr/local/bin:
 
-`sudo battery-monitor.sh /usr/local/bin`
+`sudo mv battery-monitor.sh /usr/local/bin`
 
 **Create the service for your script by following these steps:**
 
