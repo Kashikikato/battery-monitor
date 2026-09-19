@@ -1,13 +1,13 @@
 # battery-monitor
 A simple battery monitor script that can be run as a systemd service for laptops that use conservation mode. Conservation mode can either be enabled or disabled. When enabled, charging will stop at 60% and start again once the battery percentage drops to 55%. This script allows laptops that use this feature to extend the charging threshold to a custom threshold. The threshold in this script is set to 80%, but can be adjusted in the initialization of the constant UPPER (line 7). I made this script for my Ideapad 5 Pro, which uses the conservation mode. 
 
-**NOTES**
+###**NOTES**
 
 The paths in the script are valid for my computer, which does not guarantee that everything works out of the box for you as well. Please verify the correct values before using the scripts:
 ls /sys/class/power_supply -> find your battery
 cat /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode returns the conservation mode value for me (0 or 1). Please find out the correct path for your laptop. 
 
-**USAGE**
+###**USAGE**
 
 The script is meant to be used in a systemd service. Create this service for your script by following these steps:
 
