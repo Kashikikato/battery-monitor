@@ -1,0 +1,13 @@
+[Unit]
+Description=Battery charge limiter (80% cap)
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/battery-monitor.sh
+Restart=always
+RestartSec=10
+User=root
+
+[Install]
+WantedBy=multi-user.target
