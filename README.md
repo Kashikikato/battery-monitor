@@ -21,41 +21,15 @@ Return the conservation mode value (0 or 1):
 
 ### USAGE
 
-The script is meant to be used in a systemd service. 
+Navigate to the cloned directory and run:
 
-To not run into permission issues, go into the directory where you saved the script and move the script to /usr/local/bin:
+`./install.sh`
 
-`sudo mv battery-monitor.sh /usr/local/bin`
-
-**Create the service for your script by following these steps:**
-
-Create and open the service file:
-
-`sudo nano /etc/systemd/system/battery-monitor.service`
-
-Paste the following with the correct ExecStart path in the file:
-
-  ```
-  [Unit]
-  Description=Battery charge limiter (80% cap)
-  After=multi-user.target
-  
-  [Service]
-  Type=simple
-  ExecStart=/usr/local/bin/battery-monitor.sh
-  Restart=always
-  RestartSec=10
-  User=root
-  
-  [Install]
-  WantedBy=multi-user.target
-  ```
-
-Run:
+Then, the script will tell you to run:
 ```
+sudo cp battery-monitor.service /etc/systemd/system/
 sudo systemctl daemon-reload
-sudo systemctl enable battery-monitor.service
-sudo systemctl start battery-monitor.service
+sudo systemctl enable --now battery-monitor.service
 ```
 
 Check status with:
