@@ -23,14 +23,7 @@ Return the conservation mode value (0 or 1):
 
 Navigate to the cloned directory and run:
 
-`./install.sh`
-
-Then, the script will tell you to run:
-```
-sudo cp battery-monitor.service /etc/systemd/system/
-sudo systemctl daemon-reload
-sudo systemctl enable --now battery-monitor.service
-```
+`sudo ./install.sh`
 
 Check status with:
 
@@ -39,4 +32,12 @@ Check status with:
 Check logs with:
 
 `sudo journalctl -u battery-monitor.service -f`
+
+Remove symlink and script:
+
+```
+sudo systemctl disable --now battery-monitor.service
+sudo rm /usr/local/bin/battery-monitor.sh
+```
+
 
