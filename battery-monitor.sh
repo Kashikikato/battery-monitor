@@ -26,7 +26,7 @@ while true; do
       bash -c "echo 0 > $MODE_PATH"
       log "Capacity ${pct}% <= ${LOWER}% -> charging ENABLED (conservation_mode=$(cat $MODE_PATH))"
    elif ((pct < UPPER)) && ((pct > LOWER)); then
-     log "Capacity ${pct}% < UPPER and ${pct}% > LOWER -> the weird phase in between where it could be both... Schroedinger's cat charging state you could say"
+     log "Capacity ${pct}% < UPPER and ${pct}% > LOWER -> the weird phase in between where it could be both... Schroedinger's charging state you could say"
    fi
 
    sleep "$INTERVAL"
