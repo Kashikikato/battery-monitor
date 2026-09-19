@@ -9,15 +9,20 @@ cat /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode returns 
 
 ### USAGE
 
-The script is meant to be used in a systemd service. Create this service for your script by following these steps:
+The script is meant to be used in a systemd service. 
 
-Create and open the service file:
+To not run into permission issues, go into the directory where you saved the script and move the script to /usr/local/bin:
+`$ mv battery-monitor.sh /usr/local/bin`
 
-$ sudo nano /etc/systemd/system/battery-monitor.service
+Create the service for your script by following these steps:
+
+**Create and open the service file:**
+
+`$ sudo nano /etc/systemd/system/battery-monitor.service`
 
 Paste the following with the correct ExecStart path in the file:
 
-  [Unit]
+  `[Unit]
   
   Description=Battery charge limiter (80% cap)
   
@@ -27,7 +32,7 @@ Paste the following with the correct ExecStart path in the file:
   
   Type=simple
   
-  ExecStart=/usr/local/bin/battery_monitor.sh # my script is saved in /usr/local/bin, change your path according to where you saved your script
+  ExecStart=/usr/local/bin/battery-monitor.sh
   
   Restart=always
   
@@ -37,16 +42,16 @@ Paste the following with the correct ExecStart path in the file:
   
   [Install]
   
-  WantedBy=multi-user.target
+  WantedBy=multi-user.target`
 
 Run:
-  - sudo systemctl daemon-reload
-  - sudo systemctl enable battery-monitor.service
-  - sudo systemctl start battery-monitor.service
+`sudo systemctl daemon-reload
+ sudo systemctl enable battery-monitor.service
+ sudo systemctl start battery-monitor.service`
 
 Check status with:
-  - sudo systemctl status battery-monitor.service
+`sudo systemctl status battery-monitor.service`
 
 Check logs with:
-  - sudo journalctl -u battery-monitor.service -f
+`sudo journalctl -u battery-monitor.service -f`
 
