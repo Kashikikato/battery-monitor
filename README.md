@@ -12,9 +12,11 @@ cat /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode returns 
 The script is meant to be used in a systemd service. Create this service for your script by following these steps:
 
 Create and open the service file:
+
 $ sudo nano /etc/systemd/system/battery-monitor.service
 
 Paste the following with the correct ExecStart path in the file:
+
   [Unit]
   Description=Battery charge limiter (80% cap)
   After=multi-user.target
