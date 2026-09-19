@@ -39,21 +39,6 @@ Paste the following with the correct ExecStart path in the file:
   
   WantedBy=multi-user.target
 
-[Unit]
-Description=Battery charge limiter (80% cap)
-After=multi-user.target
-
-[Service]
-Type=simple
-ExecStart=/usr/local/bin/battery_monitor.sh # my script is saved in /usr/local/bin, change your path according to where you saved your script
-Restart=always
-RestartSec=10
-User=root
-
-[Install]
-WantedBy=multi-user.target
-
-
 Run:
   - sudo systemctl daemon-reload
   - sudo systemctl enable battery-monitor.service
