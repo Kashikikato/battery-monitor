@@ -30,13 +30,13 @@ Paste the following with the correct ExecStart path in the file:
   WantedBy=multi-user.target
 
 Run:
-  sudo systemctl daemon-reload
-  sudo systemctl enable battery-monitor.service
-  sudo systemctl start battery-monitor.service
+  - sudo systemctl daemon-reload
+  - sudo systemctl enable battery-monitor.service
+  - sudo systemctl start battery-monitor.service
 
 Check status with:
-  sudo systemctl status battery-monitor.service
+  - sudo systemctl status battery-monitor.service
 
 Check logs with:
-  sudo journalctl -u battery-monitor.service -f
+  - sudo journalctl -u battery-monitor.service -f
 
